@@ -2,6 +2,7 @@ require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
 const authRoutes = require('./src/routes/authRoutes');
+const movimentacaoRoutes = require('./src/routes/movimentacaoRoutes');
 
 const app = express();
 
@@ -13,7 +14,8 @@ app.use(cors({
 app.use(express.json());
 
 // Rotas
-app.use('/api/auth', authRoutes);  // <-- adicionamos esta linha
+app.use('/api/auth', authRoutes); 
+app.use('/api/movimentacoes', movimentacaoRoutes);
 
 // Rota de saúde
 app.get('/api/health', (req, res) => {
