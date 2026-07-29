@@ -1,17 +1,21 @@
 require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
+const authRoutes = require('./src/routes/authRoutes');
 
 const app = express();
 
-// Middlewares essenciais
+// Middlewares
 app.use(cors({
   origin: process.env.FRONTEND_URL || 'http://localhost:3000',
   credentials: true
 }));
-app.use(express.json()); // Para ler JSON no corpo das requisições
+app.use(express.json());
 
-// Rota de saúde (teste)
+// Rotas
+app.use('/api/auth', authRoutes);  // <-- adicionamos esta linha
+
+// Rota de saúde
 app.get('/api/health', (req, res) => {
   res.status(200).json({ message: 'Connect Hub API is running!' });
 });
