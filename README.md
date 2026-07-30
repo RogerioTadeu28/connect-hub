@@ -244,7 +244,6 @@ Este projeto foi desenvolvido para fins de aprendizagem.
 ## 👨‍💻 Autor
 
 Rogerio Tadeu Bento de Souza
-Repositório: https://github.com/RogerioTadeu28/connect-hub
 
 ---
 
