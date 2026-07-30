@@ -1,32 +1,34 @@
 require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
+const path = require('path');
 const app = express();
 
+// Middlewares
 app.use(cors());
 app.use(express.json());
+app.use(express.static(__dirname)); // Serve arquivos estáticos (HTML, CSS, JS)
 
 // Rota de saúde
 app.get('/api/health', (req, res) => {
   res.status(200).json({ message: 'Connect Hub API is running!' });
 });
 
-// Rota de teste de login (sem banco)
+// Rota de login (mock)
 app.post('/api/auth/login', (req, res) => {
   const { email, password } = req.body;
-  // Login fictício para teste
-  if (email === 'teste@teste.com' && password === '123456') {
+  if ((email === 'teste@teste.com' || email === 'teste@email.com') && password === '123456') {
     res.json({
       message: 'Login realizado com sucesso',
       token: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzg1NDI0NTg4LCJleHAiOjE3ODU4MTU2NTV9.test',
-      user: { id: 1, name: 'Teste', email: 'teste@teste.com' }
+      user: { id: 1, name: 'Teste', email }
     });
   } else {
     res.status(401).json({ error: 'Credenciais inválidas' });
   }
 });
 
-// Rota de teste de cadastro (sem banco)
+// Rota de cadastro (mock)
 app.post('/api/auth/register', (req, res) => {
   const { name, email, password } = req.body;
   if (email && password && name) {
@@ -40,7 +42,7 @@ app.post('/api/auth/register', (req, res) => {
   }
 });
 
-// Rota de movimentações (mock)
+// Rotas de movimentações (mock)
 app.get('/api/movimentacoes', (req, res) => {
   res.json([]);
 });
@@ -57,7 +59,18 @@ app.delete('/api/movimentacoes/:id', (req, res) => {
   res.status(204).send();
 });
 
+// ROTA PRINCIPAL: serve o login.html quando acessar a raiz
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, 'login.html'));
+});
+
+// ROTA PARA O DASHBOARD (após login)
+app.get('/dashboard', (req, res) => {
+  res.sendFile(path.join(__dirname, 'index.html'));
+});
+
 const PORT = process.env.PORT || 3333;
 app.listen(PORT, () => {
   console.log(`🚀 Server running on port ${PORT}`);
+  console.log(`📁 Frontend disponível em: http://localhost:${PORT}/`);
 });
