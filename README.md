@@ -6,7 +6,7 @@
 
 ## 📌 Sobre o Projeto
 
-O **Connect Hub** é um sistema **full stack** desenvolvido como parte do curso **TrendsIT2026 – Fase 3**. A aplicação foi construída com arquitetura em camadas, integrando interface web responsiva, API RESTful segura e banco de dados relacional (PostgreSQL) para persistência real dos dados.
+O **Connect Hub** é um sistema **full stack** desenvolvido como parte do programa **Trends IT 2026 – Fase 3**. A aplicação foi construída com arquitetura em camadas, integrando interface web responsiva, API RESTful segura e banco de dados relacional (PostgreSQL) para persistência real dos dados.
 
 O sistema permite que usuários realizem **cadastro e login com autenticação JWT**, gerenciem recursos através de um **CRUD completo** e acessem apenas dados autorizados. Toda a lógica de negócio é executada no servidor, e os dados são persistidos em banco SQL.
 
