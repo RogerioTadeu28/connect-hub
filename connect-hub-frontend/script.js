@@ -1,5 +1,5 @@
 // ===== CONFIGURAÇÃO =====
-const API_URL = 'http://localhost:3333/api'; // ALTERE PARA A URL DO SEU BACKEND
+const API_URL = 'https://connect-hub-smart-cash.vercel.app/api'; // ALTERE PARA A URL DO SEU BACKEND
 
 // ===== VERIFICAR AUTENTICAÇÃO =====
 const token = localStorage.getItem('token');

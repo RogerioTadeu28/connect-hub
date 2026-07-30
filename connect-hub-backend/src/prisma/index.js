@@ -1,14 +1,21 @@
 const { PrismaClient } = require('@prisma/client');
-const prisma = new PrismaClient();
-const { PrismaClient } = require('@prisma/client');
 
-const prisma = new PrismaClient({
-  log: ['query', 'info', 'warn', 'error'],
-});
+let prisma = null;
 
-// Testa a conexão com o banco (opcional, mas ajuda a identificar erros)
-prisma.$connect()
-  .then(() => console.log('✅ Banco de dados conectado com sucesso!'))
-  .catch((err) => console.error('❌ Erro ao conectar ao banco:', err.message));
+function getPrismaClient() {
+  if (!prisma) {
+    try {
+      prisma = new PrismaClient({
+        log: ['query', 'info', 'warn', 'error'],
+      });
+      console.log('✅ Prisma Client inicializado com sucesso!');
+    } catch (error) {
+      console.error('❌ Erro ao inicializar Prisma Client:', error.message);
+      // Retorna um cliente vazio para não quebrar a aplicação
+      return null;
+    }
+  }
+  return prisma;
+}
 
-module.exports = prisma;
+module.exports = getPrismaClient;
