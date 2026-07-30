@@ -237,15 +237,14 @@ cd connect-hub-frontend
 
 ## 📝 Licença
 
-Este projeto foi desenvolvido como parte do curso **TrendsIT2026 – Fase 3**.
+Este projeto foi desenvolvido para fins de aprendizagem.
 
 ---
 
 ## 👨‍💻 Autor
 
-**Seu Nome**  
-Curso: TrendsIT2026 – Fase 3  
-Repositório: [https://github.com/SEU_USUARIO/connect-hub](https://github.com/SEU_USUARIO/connect-hub)
+Rogerio Tadeu Bento de Souza
+Repositório: https://github.com/RogerioTadeu28/connect-hub
 
 ---
 
@@ -253,4 +252,4 @@ Repositório: [https://github.com/SEU_USUARIO/connect-hub](https://github.com/SE
 
 - **Site (Frontend):** [https://connect-hub-inky.vercel.app/login.html](https://connect-hub-inky.vercel.app/login.html)
 - **API (Backend):** [https://connect-hub-smart-cash.vercel.app/api/health](https://connect-hub-smart-cash.vercel.app/api/health)
-- **Repositório:** [https://github.com/SEU_USUARIO/connect-hub](https://github.com/SEU_USUARIO/connect-hub)
+- **Repositório:** https://github.com/RogerioTadeu28/connect-hub
