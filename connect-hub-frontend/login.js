@@ -50,10 +50,14 @@ loginForm.addEventListener('submit', async (e) => {
         localStorage.setItem('token', data.token);
         localStorage.setItem('user', JSON.stringify(data.user));
 
-        alert('Login realizado com sucesso! Bem-vindo, ' + data.user.name);
-        // Aqui você pode redirecionar para o dashboard
-        // window.location.href = 'dashboard.html';
-        console.log('Token:', data.token);
+        // alert('Login realizado com sucesso! Bem-vindo, ' + data.user.name);
+
+
+        // Redireciona para o dashboard
+        window.location.href = 'index.html';
+
+        // console.log('Token:', data.token);
+
     } catch (err) {
         loginError.textContent = 'Erro de conexão com o servidor';
         console.error(err);
@@ -86,11 +90,25 @@ registerForm.addEventListener('submit', async (e) => {
         localStorage.setItem('token', data.token);
         localStorage.setItem('user', JSON.stringify(data.user));
 
-        alert('Cadastro realizado com sucesso! Bem-vindo, ' + data.user.name);
-        // window.location.href = 'dashboard.html';
-        console.log('Token:', data.token);
+
+
+        // alert('Cadastro realizado com sucesso! Bem-vindo, ' + data.user.name);
+
+        // Redireciona para o Dashboard
+        window.location.href = 'index.html';
+        // console.log('Token:', data.token);
     } catch (err) {
         registerError.textContent = 'Erro de conexão com o servidor';
         console.error(err);
+    }
+});
+
+
+// ===== VERIFICAR SE JÁ ESTÁ LOGADO =====
+document.addEventListener('DOMContentLoaded', () => {
+    const token = localStorage.getItem('token');
+    if (token) {
+        // Se já estiver logado, vai direto para o dashboard
+        window.location.href = 'index.html';
     }
 });
