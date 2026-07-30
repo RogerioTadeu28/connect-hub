@@ -1,5 +1,5 @@
 // ===== CONFIGURAÇÃO =====
-const API_URL = '/api';
+const API_URL = 'https://connect-hub-smart-cash.vercel.app/api';
 
 // ===== ELEMENTOS DOM =====
 const loginForm = document.getElementById('loginForm');
